@@ -416,7 +416,7 @@ python3 app.py
 Open in browser:
 
 ```
-http://127.0.0.1:5000
+http://127.0.0.1:8080
 ```
 
 ## How to Generate a PDF
@@ -446,6 +446,26 @@ The PDF renderer:
 
 The exported JSON is standalone. It contains no references to the Annotation Studio. Another developer can use it with any renderer.
 
+## API Reference
+
+The Annotation Studio exposes the following REST API endpoints:
+
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| `/` | GET | Annotation Studio UI |
+| `/api/pdf/upload` | POST | Upload a tax form PDF |
+| `/api/pdf/metadata` | GET | Get current PDF metadata |
+| `/api/pdf/metadata` | POST | Update form metadata (id, name, version) |
+| `/api/pdf/page/<page_num>` | GET | Render a PDF page as a base64 image |
+| `/api/annotations` | GET | Get all annotations |
+| `/api/annotations` | POST | Save all annotations |
+| `/api/annotations/validate` | POST | Validate annotations against PDF metadata |
+| `/api/taxpayer` | GET | Get taxpayer data |
+| `/api/resolve/<field_id>` | GET | Resolve a single field's value |
+| `/api/resolve/all` | GET | Resolve all fields' values |
+| `/forms/1040/preview` | GET | Preview resolved form data |
+| `/forms/1040/generate` | GET | Generate and download completed PDF |
+
 ## Project Structure
 
 ```
@@ -454,9 +474,6 @@ Tax-Form-Annotation-Studio-Mark2/
 +-- data/
 |   +-- annotation.json       (annotation specification)
 |   +-- taxpayer.json          (sample taxpayer data)
-|
-+-- models/
-|   +-- annotation.py          (data classes for type hints)
 |
 +-- services/
 |   +-- data_resolver.py       (resolves valuePath to values)
@@ -510,3 +527,4 @@ Tax-Form-Annotation-Studio-Mark2/
 - Version history for annotations
 - Import from PDF form fields
 - Support for other output formats (HTML, CSV, XML)
+- **API-Based Data Source** — Fetch taxpayer data from a remote API endpoint instead of using a local `taxpayer.json` file, enabling integration with external tax software, databases, or cloud-based taxpayer record systems
