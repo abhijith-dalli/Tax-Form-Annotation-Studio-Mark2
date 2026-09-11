@@ -173,24 +173,6 @@ def get_taxpayer():
     return jsonify(data)
 
 
-@app.route("/api/pdf/pages", methods=["GET"])
-def get_pdf_pages():
-    pdf_path = get_active_pdf_path()
-
-    if not pdf_path:
-        return jsonify({"loaded": False, "page_count": 0, "pages": {}})
-
-    meta = get_pdf_metadata_file()
-    if meta and "pdf_metadata" in meta:
-        return jsonify({
-            "loaded": True,
-            **meta["pdf_metadata"]
-        })
-
-    metadata = get_pdf_metadata(pdf_path)
-    return jsonify({"loaded": True, **metadata})
-
-
 @app.route("/api/pdf/page/<int:page_num>", methods=["GET"])
 def get_pdf_page(page_num):
     pdf_path = get_active_pdf_path()

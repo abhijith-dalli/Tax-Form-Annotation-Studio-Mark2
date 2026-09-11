@@ -1,7 +1,5 @@
 import base64
 import io
-import os
-import tempfile
 
 from pdf2image import convert_from_path
 from pypdf import PdfReader
@@ -43,20 +41,3 @@ def pdf_page_to_image(pdf_path, page_number, dpi=150):
     buffer.seek(0)
 
     return base64.b64encode(buffer.read()).decode("utf-8")
-
-
-def pdf_all_pages_to_images(pdf_path, dpi=100):
-    images = convert_from_path(pdf_path, dpi=dpi)
-    result = []
-
-    for i, image in enumerate(images):
-        buffer = io.BytesIO()
-        image.save(buffer, format="PNG")
-        buffer.seek(0)
-        b64 = base64.b64encode(buffer.read()).decode("utf-8")
-        result.append({
-            "page": i + 1,
-            "image": b64
-        })
-
-    return result

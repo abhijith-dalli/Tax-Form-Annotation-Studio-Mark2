@@ -460,7 +460,6 @@ class App {
         }
 
         const fmt = field.format || {};
-        const val = field.validation || {};
         const vw = field.visibleWhen;
 
         panel.innerHTML = `

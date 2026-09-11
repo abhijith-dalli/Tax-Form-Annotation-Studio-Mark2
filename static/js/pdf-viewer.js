@@ -9,14 +9,6 @@ class PdfViewer {
         this.onImageReady = null;
     }
 
-    async loadMetadata() {
-        const response = await fetch("/api/pdf/pages");
-        const data = await response.json();
-        this.totalPages = data.page_count;
-        this.pageDimensions = data.pages;
-        return data;
-    }
-
     async loadPage(pageNum) {
         if (this.pageImages[pageNum]) {
             return this.pageImages[pageNum];
@@ -90,19 +82,6 @@ class PdfViewer {
         return null;
     }
 
-    pdfToScreenCoords(pdfX, pdfY) {
-        return {
-            x: pdfX * this.scale,
-            y: pdfY * this.scale
-        };
-    }
-
-    screenToPdfCoords(screenX, screenY) {
-        return {
-            x: screenX / this.scale,
-            y: screenY / this.scale
-        };
-    }
 }
 
 window.PdfViewer = PdfViewer;
