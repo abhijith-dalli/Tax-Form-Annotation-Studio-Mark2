@@ -1,4 +1,4 @@
-# Tax Form Annotation Studio
+# Tax Form Annotation Studio — Mark 2
 
 A visual tool for creating, editing, validating, previewing, and exporting tax-form annotations.
 
@@ -14,10 +14,10 @@ The annotation does not contain actual values. It contains instructions for find
 
 Tax forms have fixed layouts. Taxpayer data changes for every return. The annotation specification bridges these two concerns:
 
-1. **Separation** - Annotation layout is separate from taxpayer data.
-2. **Reusability** - One annotation works with many taxpayer records.
-3. **Portability** - The exported JSON can be consumed by any renderer in any language.
-4. **Extensibility** - New field types and formatting options can be added without breaking existing annotations.
+1. **Separation** — Annotation layout is separate from taxpayer data.
+2. **Reusability** — One annotation works with many taxpayer records.
+3. **Portability** — The exported JSON can be consumed by any renderer in any language.
+4. **Extensibility** — New field types and formatting options can be added without breaking existing annotations.
 
 ## Annotation Structure
 
@@ -351,7 +351,7 @@ The annotation specification is implementation-agnostic. To build a renderer in 
 1. **Parse** the annotation JSON
 2. **Load** the taxpayer data
 3. **For each field**:
-   - Check `visibleWhen` - skip if condition is false
+   - Check `visibleWhen` — skip if condition is false
    - Resolve `valuePath` against taxpayer data
    - Format the value based on `type` and `format`
    - Position the value at `position.x`, `position.y` on the specified `position.page`
@@ -422,40 +422,41 @@ http://127.0.0.1:5000
 ## How to Generate a PDF
 
 1. Open the Annotation Studio
-2. Load or create annotations
-3. Click "Generate PDF"
-4. The completed PDF downloads automatically
+2. Upload a tax form PDF (or use an existing one)
+3. Add and configure annotation fields
+4. Click **Generate PDF**
+5. The completed PDF downloads automatically
 
 The PDF renderer:
-1. Loads the template PDF (`templates/form_1040.pdf`)
+1. Loads the uploaded PDF
 2. Reads the annotation
 3. Resolves values from taxpayer data
 4. Applies formatting
 5. Applies conditional visibility
 6. Positions values on the PDF
-7. Saves the completed PDF to `output/`
+7. Saves and serves the completed PDF
 
 ## How to Export an Annotation
 
 1. Open the Annotation Studio
 2. Create or modify annotations
-3. Click "Export JSON"
+3. Click **Export JSON**
 4. A modal displays the JSON
-5. Click "Copy to Clipboard" to copy
+5. Click **Copy to Clipboard** to copy
 
 The exported JSON is standalone. It contains no references to the Annotation Studio. Another developer can use it with any renderer.
 
 ## Project Structure
 
 ```
-tax-system-annotations/
+Tax-Form-Annotation-Studio-Mark2/
 |
 +-- data/
 |   +-- annotation.json       (annotation specification)
 |   +-- taxpayer.json          (sample taxpayer data)
 |
 +-- models/
-|   +-- annotation.py          (data classes, if needed)
+|   +-- annotation.py          (data classes for type hints)
 |
 +-- services/
 |   +-- data_resolver.py       (resolves valuePath to values)
@@ -466,7 +467,6 @@ tax-system-annotations/
 |
 +-- templates/
 |   +-- index.html             (Annotation Studio UI)
-|   +-- form_1040.pdf          (PDF template)
 |
 +-- static/
 |   +-- css/
@@ -475,8 +475,8 @@ tax-system-annotations/
 |       +-- app.js             (main application logic)
 |       +-- pdf-viewer.js      (PDF page rendering)
 |
-+-- output/
-|   +-- form_1040_completed.pdf (generated PDFs)
++-- uploads/                   (uploaded PDFs, git-ignored)
++-- output/                    (generated PDFs, git-ignored)
 |
 +-- app.py                     (Flask application)
 +-- requirements.txt
@@ -485,7 +485,6 @@ tax-system-annotations/
 
 ## Current Limitations
 
-- The PDF template (`form_1040.pdf`) is a placeholder, not a real IRS form
 - Font selection is limited to Helvetica
 - No support for multi-line text wrapping
 - No support for rotation
@@ -497,8 +496,8 @@ tax-system-annotations/
 
 ## Possible Future Extensions
 
-- **Field Validation** - Add validation rules (required, min/max values, regex patterns) to annotations with UI in the Annotation Studio
-- **Conditional Visibility** - Show/hide fields based on other field values (e.g., show spouse fields only when filing status is "married")
+- **Field Validation** — Add validation rules (required, min/max values, regex patterns) to annotations with UI in the Annotation Studio
+- **Conditional Visibility UI** — Show/hide fields based on other field values (e.g., show spouse fields only when filing status is "married")
 - Support for additional field types (phone, email, SSN with masking)
 - Rich text formatting (bold, italic)
 - Multiple font support
