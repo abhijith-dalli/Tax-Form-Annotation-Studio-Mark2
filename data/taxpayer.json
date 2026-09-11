@@ -1,0 +1,13 @@
+{
+    "taxReturn": {
+      "taxpayer": {
+        "name": {
+          "first": "John",
+          "last": "Smith"
+        }
+      },
+      "income": {
+        "wages": 85000
+      }
+    }
+  }

@@ -1,0 +1,172 @@
+%PDF-1.3
+%‚„œ”
+1 0 obj
+<<
+/Producer (pypdf)
+>>
+endobj
+2 0 obj
+<<
+/Type /Pages
+/Count 1
+/Kids [ 4 0 R ]
+>>
+endobj
+3 0 obj
+<<
+/Type /Catalog
+/Pages 2 0 R
+>>
+endobj
+4 0 obj
+<<
+/Contents 5 0 R
+/MediaBox [ 0 0 612 792 ]
+/Resources <<
+/Font <<
+/F1 6 0 R
+/F1-0 7 0 R
+/F2 8 0 R
+/F3 9 0 R
+>>
+/ProcSet [ /ImageB /ImageC /ImageI /PDF /Text ]
+>>
+/Rotate 0
+/Trans <<
+>>
+/Type /Page
+/Annots [ ]
+/Parent 2 0 R
+>>
+endobj
+5 0 obj
+<<
+/Length 1204
+>>
+stream
+q
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+BT /F2 16 Tf 19.2 TL ET
+BT 1 0 0 1 72 732 Tm (U.S. INDIVIDUAL INCOME TAX RETURN) Tj T* ET
+BT /F1 10 Tf 12 TL ET
+BT 1 0 0 1 72 714 Tm (MOCK FORM \227 FOR TAX FORM ANNOTATION DEMONSTRATION ONLY) Tj T* ET
+BT /F1 10 Tf 12 TL ET
+BT 1 0 0 1 72 647 Tm (First Name) Tj T* ET
+n 100 622 150 20 re S
+BT 1 0 0 1 260 647 Tm (Last Name) Tj T* ET
+n 260 622 150 20 re S
+BT /F2 11 Tf 13.2 TL ET
+BT 1 0 0 1 72 172 Tm (Wages) Tj T* ET
+BT /F1 9 Tf 10.8 TL ET
+BT 1 0 0 1 72 157 Tm (Enter wages, salaries, tips, etc.) Tj T* ET
+n 450 152 100 20 re S
+BT /F2 11 Tf 13.2 TL ET
+BT 1 0 0 1 72 492 Tm (Income) Tj T* ET
+BT /F1 10 Tf 12 TL ET
+n 72 487 m 540 487 l S
+BT 1 0 0 1 72 452 Tm (Other income) Tj T* ET
+n 450 442 100 20 re S
+BT 1 0 0 1 72 412 Tm (Total income) Tj T* ET
+n 450 402 100 20 re S
+BT /F3 8 Tf 9.6 TL ET
+BT 1 0 0 1 72 40 Tm (Mock document created for the Tax System Annotations project.) Tj T* ET
+ 
+
+Q
+q
+0.0 0.0 612 792 re
+W
+n
+1 0 0 1 0 0 cm
+BT
+/F1-0 12 Tf
+14.4 TL
+ET
+BT
+/F1-0 10 Tf
+12 TL
+ET
+BT
+1 0 0 1 100 642 Tm
+(John) Tj
+T*
+ET
+BT
+/F1-0 10 Tf
+12 TL
+ET
+BT
+1 0 0 1 260 642 Tm
+(Smith) Tj
+T*
+ET
+BT
+/F1-0 10 Tf
+12 TL
+ET
+BT
+1 0 0 1 449.96 192 Tm
+(\04485\054000\05600) Tj
+T*
+ET
+Q
+
+endstream
+endobj
+6 0 obj
+<<
+/BaseFont /Helvetica
+/Encoding /WinAnsiEncoding
+/Name /F1
+/Subtype /Type1
+/Type /Font
+>>
+endobj
+7 0 obj
+<<
+/BaseFont /Helvetica
+/Encoding /WinAnsiEncoding
+/Name /F1
+/Subtype /Type1
+/Type /Font
+>>
+endobj
+8 0 obj
+<<
+/BaseFont /Helvetica-Bold
+/Encoding /WinAnsiEncoding
+/Name /F2
+/Subtype /Type1
+/Type /Font
+>>
+endobj
+9 0 obj
+<<
+/BaseFont /Helvetica-Oblique
+/Encoding /WinAnsiEncoding
+/Name /F3
+/Subtype /Type1
+/Type /Font
+>>
+endobj
+xref
+0 10
+0000000000 65535 f 
+0000000015 00000 n 
+0000000054 00000 n 
+0000000113 00000 n 
+0000000162 00000 n 
+0000000405 00000 n 
+0000001661 00000 n 
+0000001768 00000 n 
+0000001875 00000 n 
+0000001987 00000 n 
+trailer
+<<
+/Size 10
+/Root 3 0 R
+/Info 1 0 R
+>>
+startxref
+2102
+%%EOF
