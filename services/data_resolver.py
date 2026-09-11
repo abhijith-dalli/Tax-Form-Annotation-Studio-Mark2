@@ -1,14 +1,4 @@
 def resolve_value(data, path):
-    """
-    Resolve a value from nested dictionary data using dot notation.
-
-    Example:
-        path = "taxReturn.taxpayer.name.first"
-
-    Returns:
-        "John"
-    """
-
     current = data
 
     for key in path.split("."):
@@ -24,3 +14,41 @@ def resolve_value(data, path):
         current = current[key]
 
     return current
+
+
+def resolve_value_safe(data, path):
+    try:
+        value = resolve_value(data, path)
+        return value, None
+    except (KeyError, ValueError) as e:
+        return None, str(e)
+
+
+def evaluate_condition(data, condition):
+    if condition is None:
+        return True
+
+    if not isinstance(condition, dict):
+        return True
+
+    path = condition.get("path")
+    equals = condition.get("equals")
+
+    if path is None or equals is None:
+        return True
+
+    value, error = resolve_value_safe(data, path)
+
+    if error:
+        return False
+
+    return str(value) == str(equals)
+
+
+def is_field_visible(field, taxpayer_data):
+    condition = field.get("visibleWhen")
+
+    if condition is None:
+        return True
+
+    return evaluate_condition(taxpayer_data, condition)

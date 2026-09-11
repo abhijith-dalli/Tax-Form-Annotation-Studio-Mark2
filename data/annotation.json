@@ -1,62 +1,185 @@
 {
-    "form": {
-      "id": "1040",
-      "name": "U.S. Individual Income Tax Return",
-      "version": "2025"
+  "form": {
+    "id": "Retrurns",
+    "name": "Retrurns",
+    "version": "2025"
+  },
+  "fields": [
+    {
+      "format": {
+        "alignment": "left",
+        "fontSize": 10
+      },
+      "id": "filingStatus",
+      "label": "Filing Status",
+      "position": {
+        "height": 20,
+        "page": 1,
+        "width": 200,
+        "x": 60,
+        "y": 200
+      },
+      "type": "text",
+      "validation": {
+        "required": false
+      },
+      "valuePath": "taxReturn.filingStatus",
+      "visibleWhen": null
     },
-    "fields": [
-      {
-        "id": "taxpayerFirstName",
-        "label": "First Name",
-        "type": "text",
-        "valuePath": "taxReturn.taxpayer.name.first",
-        "position": {
-          "page": 1,
-          "x": 100,
-          "y": 150,
-          "width": 150,
-          "height": 20
-        },
-        "format": {
-          "fontSize": 10,
-          "alignment": "left"
-        }
+    {
+      "format": {
+        "alignment": "left",
+        "fontSize": 10
       },
-      {
-        "id": "taxpayerLastName",
-        "label": "Last Name",
-        "type": "text",
-        "valuePath": "taxReturn.taxpayer.name.last",
-        "position": {
-          "page": 1,
-          "x": 260,
-          "y": 150,
-          "width": 150,
-          "height": 20
-        },
-        "format": {
-          "fontSize": 10,
-          "alignment": "left"
-        }
+      "id": "taxpayerFirstName",
+      "label": "First Name",
+      "position": {
+        "height": 20,
+        "page": 1,
+        "width": 150,
+        "x": 60,
+        "y": 140
       },
-      {
-        "id": "wages",
-        "label": "Wages",
-        "type": "currency",
-        "valuePath": "taxReturn.income.wages",
-        "position": {
-          "page": 1,
-          "x": 400,
-          "y": 600,
-          "width": 100,
-          "height": 20
-        },
-        "format": {
-          "fontSize": 10,
-          "alignment": "right",
-          "currency": "USD",
-          "decimalPlaces": 2
-        }
-      }
-    ]
-  }
+      "type": "text",
+      "validation": {
+        "required": false
+      },
+      "valuePath": "taxReturn.taxpayer.name.first",
+      "visibleWhen": null
+    },
+    {
+      "format": {
+        "alignment": "left",
+        "fontSize": 10
+      },
+      "id": "taxpayerLastName",
+      "label": "Last Name",
+      "position": {
+        "height": 20,
+        "page": 2,
+        "width": 150,
+        "x": 260,
+        "y": 140
+      },
+      "type": "text",
+      "validation": {
+        "required": false
+      },
+      "valuePath": "taxReturn.taxpayer.name.last",
+      "visibleWhen": null
+    },
+    {
+      "format": {
+        "alignment": "left",
+        "fontSize": 10
+      },
+      "id": "taxpayerSSN",
+      "label": "Social Security Number",
+      "position": {
+        "height": 20,
+        "page": 1,
+        "width": 120,
+        "x": 230,
+        "y": 200
+      },
+      "type": "text",
+      "validation": {
+        "required": true
+      },
+      "valuePath": "taxReturn.taxpayer.ssn",
+      "visibleWhen": null
+    },
+    {
+      "format": {
+        "alignment": "right",
+        "currency": "USD",
+        "decimalPlaces": 2,
+        "fontSize": 10
+      },
+      "id": "wages",
+      "label": "Wages",
+      "position": {
+        "height": 20,
+        "page": 1,
+        "width": 100,
+        "x": 60,
+        "y": 310
+      },
+      "type": "currency",
+      "validation": {
+        "required": false
+      },
+      "valuePath": "taxReturn.income.wages",
+      "visibleWhen": null
+    },
+    {
+      "format": {
+        "alignment": "right",
+        "currency": "USD",
+        "decimalPlaces": 2,
+        "fontSize": 10
+      },
+      "id": "interestIncome",
+      "label": "Taxable Interest",
+      "position": {
+        "height": 20,
+        "page": 1,
+        "width": 100,
+        "x": 320,
+        "y": 310
+      },
+      "type": "currency",
+      "validation": {
+        "required": false
+      },
+      "valuePath": "taxReturn.income.interest",
+      "visibleWhen": null
+    },
+    {
+      "format": {
+        "alignment": "right",
+        "currency": "USD",
+        "decimalPlaces": 2,
+        "fontSize": 10
+      },
+      "id": "dividendIncome",
+      "label": "Other Income",
+      "position": {
+        "height": 20,
+        "page": 1,
+        "width": 100,
+        "x": 60,
+        "y": 370
+      },
+      "type": "currency",
+      "validation": {
+        "required": false
+      },
+      "valuePath": "taxReturn.income.dividends",
+      "visibleWhen": null
+    },
+    {
+      "format": {
+        "alignment": "right",
+        "currency": "USD",
+        "decimalPlaces": 2,
+        "fontSize": 10
+      },
+      "id": "totalIncome",
+      "label": "Total Income",
+      "position": {
+        "height": 20,
+        "page": 1,
+        "width": 100,
+        "x": 330,
+        "y": 370
+      },
+      "type": "currency",
+      "validation": {
+        "required": false
+      },
+      "valuePath": "taxReturn.income.total",
+      "visibleWhen": null
+    }
+  ]
+}

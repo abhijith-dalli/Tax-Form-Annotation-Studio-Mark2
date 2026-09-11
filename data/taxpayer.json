@@ -1,13 +1,29 @@
 {
     "taxReturn": {
-      "taxpayer": {
-        "name": {
-          "first": "John",
-          "last": "Smith"
+        "filingStatus": "married",
+        "taxpayer": {
+            "name": {
+                "first": "John",
+                "last": "Smith"
+            },
+            "ssn": "123-45-6789",
+            "dateOfBirth": "1985-06-15"
+        },
+        "spouse": {
+            "name": {
+                "first": "Jane",
+                "last": "Smith"
+            },
+            "ssn": "987-65-4321"
+        },
+        "income": {
+            "wages": 85000,
+            "interest": 1250.50,
+            "dividends": 450.75,
+            "total": 86701.25
+        },
+        "deductions": {
+            "standard": true
         }
-      },
-      "income": {
-        "wages": 85000
-      }
     }
-  }
+}
