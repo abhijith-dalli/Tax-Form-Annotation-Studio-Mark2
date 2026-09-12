@@ -301,10 +301,7 @@ class App {
             this.elements.formName.textContent = formName;
             this.elements.formVersion.textContent = formVersion;
 
-            this.hidePdfPlaceholder();
-            await this.pdfViewer.renderPage(1, this.elements.pdfContainer);
-            this.renderAnnotations();
-            await this.validate();
+            window.location.reload();
         });
     }
 
