@@ -19,6 +19,10 @@ UPLOAD_DIR = "uploads"
 os.makedirs(UPLOAD_DIR, exist_ok=True)
 os.makedirs("output", exist_ok=True)
 
+meta_file = os.path.join(UPLOAD_DIR, "current.json")
+if os.path.exists(meta_file):
+    os.remove(meta_file)
+
 
 def get_active_pdf_path():
     meta_file = os.path.join(UPLOAD_DIR, "current.json")
